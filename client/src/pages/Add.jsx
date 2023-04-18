@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
 
 const Add = () => {
-  return (
-    <div>Add</div>
-  )
-}
+    
+    const [input, setInput] = useState({
+        title: "",
+        desc: "",
+        price: null,
+        cover: "",
+    })
 
-export default Add
+  return (
+    <div className="form">
+      <h1>Add new book</h1>
+      <input type="text" placeholder="title" />
+      <input type="text" placeholder="desc" />
+      <input type="number" placeholder="price" />
+      <input type="text" placeholder="cover" />
+    </div>
+  );
+};
+
+export default Add;
