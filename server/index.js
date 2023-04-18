@@ -10,6 +10,7 @@ const db = mysql.createConnection({
     database: "crud_app"
 })
 
+app.use(express.json());
 
 app.get("/",(req, res)=>{
     res.json("Hello are you there?")
@@ -23,6 +24,17 @@ app.get("/books",(req,res)=>{
         return res.json(data)
     })
 })
+
+app.post("/books", (req,res)=>{
+    const q = "INSERT INTO books (`title`, `desc`, `cover`) VALUES (?)";
+    const values = [req.body.title, req.body.desc, req.body.cover,];
+
+    db.query(q, [values], (err,data)=>{
+        if(err) return res.json(err);
+        return res.json("It works");
+    })
+})
+
 
 app.listen(3000, ()=>{
     console.log("Server connected!")
