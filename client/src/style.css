@@ -9,6 +9,7 @@
 
 .books {
   display: flex;
+  gap: 10px;
 }
 .book {
   flex: 1;
@@ -40,4 +41,25 @@ img {
     cursor: pointer;
     border: 1px solid lightblue;
     color: blueviolet;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid grey;
+}
+
+.formButton {
+    border: none;
+    padding: 10px;
+    background-color: rgb(224, 125, 12);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
