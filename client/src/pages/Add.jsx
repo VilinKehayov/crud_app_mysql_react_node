@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom"
 
 const Add = () => {
     
-    const [input, setInput] = useState({
+    const [book, setBook] = useState({
         title: "",
         desc: "",
         price: null,
@@ -14,14 +14,14 @@ const Add = () => {
     const navigate = useNavigate();
     
     const handleChange = (e) => {
-        setInput(prev => ({...prev,[e.target.name]: e.target.value}))
-        console.log(input);
+        setBook((prev) => ({...prev,[e.target.name]: e.target.value}))
+        console.log(book);
     }
 
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:3000/books", input)
+            await axios.post("http://localhost:3000/books", book)
             navigate("/")
         } catch (error) {
             console.log(error);
